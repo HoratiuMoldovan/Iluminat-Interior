@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd"> 
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+		    
+	<package name="default" extends="struts-default" namespace="/">
+    
+   <action name="doSendEmail" class="load_file.SendEmailAction"
+			method="sendEmail">
+			
+			<param name="host">smtp.gmail.com</param>
+			<param name="port">587</param>
+			<param name="userName">csc20014@gmail.com</param>
+			<param name="password">csc20014!</param>
+			        			              	    		
+			<result name="success">index.jsp</result>
+			
+		</action>
+    
+        <action name="add"
+			class="operatiicrud.Coeficienti_reflexie_action" method="add">
+			<result name="success">Coeficienti_reflexie.jsp</result>
+		</action>
+				
+		<action name="list"
+			class="operatiicrud.Coeficienti_reflexie_action" method="execute">
+			<result name="success">panou_aplicatie.jsp</result>
+		</action>		
+				
+		<action name="delete"
+			class="operatiicrud.Coeficienti_reflexie_action" method="delete">
+			<result name="success">Coeficienti_reflexie.jsp</result>
+		</action>
+		
+		<action name="list_admin"
+			class="operatiicrud.Coeficienti_reflexie_action" method="execute">
+			<result name="success">Coeficienti_reflexie.jsp</result>
+		</action>	
+     
+     	<action name="add_user"
+			class="operatiicrud.Users_action" method="add">
+			<result name="success">User.jsp</result>
+		</action>
+		
+		<action name="add_index"
+			class="operatiicrud.Users_action" method="add">
+			<result name="success">pagina_user_creat.jsp</result>
+		</action>
+				
+		<action name="list_user"
+			class="operatiicrud.Users_action" method="execute">
+			<result name="success">User.jsp</result>
+		</action>		
+				
+		<action name="delete_user"
+			class="operatiicrud.Users_action" method="delete">
+			<result name="success">User.jsp</result>
+		</action>
+     
+        <action name="add_nivel"
+			class="operatiicrud.Nivel_iluminat_action" method="add">
+			<result name="success">Nivel_iluminat.jsp</result>
+		</action>
+				
+		<action name="list_nivel"
+			class="operatiicrud.Nivel_iluminat_action" method="execute">
+			<result name="success">Nivel_iluminat.jsp</result>
+		</action>		
+				
+		<action name="delete_nivel"
+			class="operatiicrud.Nivel_iluminat_action" method="delete">
+			<result name="success">Nivel_iluminat.jsp</result>
+		</action>
+           
+        <action name="add_coef_lampi"
+			class="operatiicrud.Coef_utiliz_lampi_flourescente_action" method="add">
+			<result name="success">Coef_utiliz_lampi.jsp</result>
+		</action>
+				
+		<action name="list_coef_lampi"
+			class="operatiicrud.Coef_utiliz_lampi_flourescente_action" method="execute">
+			<result name="success">Coef_utiliz_lampi.jsp</result>
+		</action>		
+				
+		<action name="delete_coef_lampi"
+			class="operatiicrud.Coef_utiliz_lampi_flourescente_action" method="delete">
+			<result name="success">Coef_utiliz_lampi.jsp</result>
+		</action>   
+           
+        <action name="add_corp"
+			class="operatiicrud.Corpuri_de_iluminat_action" method="add">
+			<result name="success">Corpuri_iluminat.jsp</result>
+		</action>
+				
+		<action name="list_corp"
+			class="operatiicrud.Corpuri_de_iluminat_action" method="execute">
+			<result name="success">Corpuri_iluminat.jsp</result>
+		</action>		
+				
+		<action name="delete_corp"
+			class="operatiicrud.Corpuri_de_iluminat_action" method="delete">
+			<result name="success">Corpuri_iluminat.jsp</result>
+		</action>      
+           
+        <action name="upload" class="load_file.uploadFile" method="execute">
+        <result name="success">/upload.jsp</result>
+        </action> 
+        
+        <action name="delete_up" class="load_file.uploadFile" method="delete">
+        <result name="success">/upload.jsp</result>
+        </action>
+   
+ 		<action name="da_jos"
+			class="load_file.DownloadAction" method="test">
+			<result name="success">download.jsp</result>
+		</action>	  
+        
+        
+       
+       <action name="list_nivel_panou_aplicatie"
+			class="operatiicrud.Nivel_iluminat_action" method="execute">
+			<result name="success">panou_aplicatie.jsp</result>
+		</action>
+       
+       <action name="login_admin"
+			class="operatiicrud.LoginAction" method="authenticate">
+			<result name="success">panou_admin.jsp</result>
+		</action>
+       
+       <action name="list_likuri"
+			class="operatiicrud.Linkuri_action" method="execute">
+			<result name="success">linkuri.jsp</result>
+		</action>
+		
+		<action name="list_likuri_index"
+			class="operatiicrud.Linkuri_action" method="execute">
+			<result name="success">linkuri_utiliz.jsp</result>
+		</action>
+       
+       <action name="delete_linkuri"
+			class="operatiicrud.Linkuri_action" method="delete">
+			<result name="success">linkuri.jsp</result>
+		</action>
+		
+		<action name="add_linkuri"
+			class="operatiicrud.Linkuri_action" method="add">
+			<result name="success">linkuri.jsp</result>
+		</action>
+		
+		<action name="selectbyId"
+			class="operatiicrud.Nivel_iluminat_action" method="selectbyId">
+			<result name="success">panou_aplicatie.jsp</result>
+		</action>
+	              
+				
+	</package>
+	
+</struts>
+
